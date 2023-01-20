@@ -1,0 +1,16 @@
+-----------------------
+\def{hi}{says hello}
+\def{vinh}{vinh # dogs and}
+\vinh{loves} \hi{hello}
+\undef{hi}
+\vinh{likes} max forster
+\if{}{hi}{\vinh{hi}} \ifdef{vinh}{stuff}{two}
+\ifdef{}{\vinh{do this}}{don't do this}
+\def{prefix}{1}
+\def{suffix}{2}
+\if{}{\pre}{\suf}fix{}
+\def{B}{buffalo}
+\expandafter{\B{}}{\undef{B}\def{B}{bison}}
+\vinh{andrew}
+\B{}
+\expandafter{before}{after}
