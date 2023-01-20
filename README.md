@@ -1,9 +1,8 @@
 # LaTeX-Macroprocesser
-This is a tex like macroprocessor
 
-TeX (or it's later evolution LaTeX) is a program used often in academia to write technical papers and documents. Users define macros in text files that also contain the contents of the document, and TeX processes macros and string expands them based on their definitions.
+## TeX (or it's later evolution LaTeX) is a program used often in academia to write technical papers and documents. Users define macros in text files that also contain the contents of the document, and TeX processes macros and string expands them based on their definitions.
 
-For this assignment you will implement a TeX-like macro processor in C. This macro processor will perform a transform on a set of input files (or the standard input when no files are specified) and output the result to the standard output. As the input is read, your program will replace macro strings according to the macro’s value mapping and the macro expansion rules. Any input file(s) are provided as command line arguments. The execution of your program on the command line should have this form:
+Implement a TeX-like macro processor in C. This macro processor will perform a transform on a set of input files (or the standard input when no files are specified) and output the result to the standard output. As the input is read, your program will replace macro strings according to the macro’s value mapping and the macro expansion rules. Any input file(s) are provided as command line arguments. The execution of your program on the command line should have this form:
 
 proj1 [file]*
 Macros always start with an unescaped backslash followed by a name string. Macros have optional arguments. Each argument is placed in curly braces immediately after the macro name. For example:
