@@ -43,7 +43,7 @@ The \def macro defines a new macro called \MACRO, Future occurrences of \MACRO w
 5. With a few exceptions (see the built-in macros below), macro arguments can contain escape characters (backslashes). The details on how escape characters should be handled is given in a section below.
 
 ## Built-In Macros
-You will need to implement a set of built-in macros in the macro processor you are building.  The programmer can use these special macros in the source files to define/undefine new macros, include text from other files, do comparisons, etc. These are listed below: <br />
+Implement a set of built-in macros in the macro processor you are building.  The programmer can use these special macros in the source files to define/undefine new macros, include text from other files, do comparisons, etc. These are listed below: <br />
 
 ### \def allows a programmer to define a new macro mapping:
 #### \def{NAME}{VALUE}
@@ -57,14 +57,14 @@ The entire \def macro and arguments are always replaced by the empty string.  Th
 Like all macros, all three arguments can contain arbitrary text, but must be braced balanced.  You should not expand COND. The functionality should be this: the entire \if macro including arguments should be replaced with either the THEN or ELSE depending on the size of COND. Then, after expansion, processing resumes at the beginning of the replacement string.
 
 ### \ifdef is similar to \if; it expands to either THEN or ELSE:
-####\ifdef{NAME}{THEN}{ELSE}
+#### \ifdef{NAME}{THEN}{ELSE}
 The main difference is with the condition argument, NAME, which is restricted to alphanumeric characters. If NAME matches a currently defined macro name then the condition is true, otherwise it is false.
 
-###\include macros are replaced by the contents of the file PATH. Typical brace balancing rules apply here:
-####\include{PATH}
+### \include macros are replaced by the contents of the file PATH. Typical brace balancing rules apply here:
+#### \include{PATH}
 
-###\expandafter has the form:
-####\expandafter{BEFORE}{AFTER}
+### \expandafter has the form:
+#### \expandafter{BEFORE}{AFTER}
 The point of this macro is to delay expanding the before argument until the after argument has been expanded. The output of this macro expansion is simply BEFORE immediately followed by the expanded AFTER. Note that this changes the recursive evaluation rule, i.e. you should eagerly expand the all macros in the AFTER string before touching BEFORE. This means that any new macros defined in AFTER should be in scope in for the BEFORE. You may not use additional processes/threads to accomplish these actions. Here’s an example program:
 
 ## Input Output Example
@@ -77,7 +77,7 @@ bison <br />
 Why is this the case? It is because \B{} is expanded after it has be redefined in the after argument. 
  
 ## Comments
-Your program should support comments. The comment character, %, should cause your program to ignore it and all subsequent characters up to the first non-blank, non-tab character following the next newline or the end of the current file, whichever comes first. This convention applies only when reading characters from the file(s) specified on the command line (or the standard input if none is specified) or from an included file. Comments should be removed only once from each file or from standard input. After all inputs are read and comments are removed, then you should start expanding.  Note: the comment character can be escaped, see the section below.
+The comment character, %, should cause your program to ignore it and all subsequent characters up to the first non-blank, non-tab character following the next newline or the end of the current file, whichever comes first. This convention applies only when reading characters from the file(s) specified on the command line (or the standard input if none is specified) or from an included file. Comments should be removed only once from each file or from standard input. After all inputs are read and comments are removed, then you should start expanding.  Note: the comment character can be escaped, see the section below.
 
 ## Escape Characters
 Besides being used as the “start” character for a macro, a \ character can also be used to escape one of the following special characters \, #, %, {, } so that it is not treated as a special character.  For these characters the effect of the \ is preserved until it is about to be output, at which point it is suppressed and the \, #, %, {, } is output instead. In effect, the \ is ignored and the following character is treated as a non-special character thereafter.  That is, in effect the pair of characters can be treated as a macro with no arguments until it is expanded and output. We then have the following cases:
