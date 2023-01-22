@@ -7,10 +7,11 @@ Implement a TeX-like macro processor in C. This macro processor will perform a t
 proj1 [file]*
 Macros always start with an unescaped backslash followed by a name string. Macros have optional arguments. Each argument is placed in curly braces immediately after the macro name. For example: <br />
 
-\NAME{ARGUMENT 1}{ARGUMENT 2}{ARGUMENT 3}
-Here's a brief example of an input/output execution: <br />
+> \NAME{ARGUMENT 1}{ARGUMENT 2}{ARGUMENT 3}
 
-### Input	Output
+### Here's a brief example of an input/output execution: <br />
+
+#### Input	Output
 **A list of values:** <br />
 \def{MACRO}{VALUE = #} <br />
 \MACRO{1} <br />
