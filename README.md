@@ -5,9 +5,7 @@
 Implement a TeX-like macro processor in C. This macro processor will perform a transform on a set of input files (or the standard input when no files are specified) and output the result to the standard output. As the input is read, your program will replace macro strings according to the macro’s value mapping and the macro expansion rules. Any input file(s) are provided as command line arguments. The execution of your program on the command line should have this form: <br />
 
 proj1 [file]*
-Macros always start with an unescaped backslash followed by a name string. Macros have optional arguments. Each argument is placed in curly braces immediately after the macro name. For example: <br />
-
-> \NAME{ARGUMENT 1}{ARGUMENT 2}{ARGUMENT 3}
+Macros always start with an unescaped backslash followed by a name string. Macros have optional arguments. Each argument is placed in curly braces immediately after the macro name. For example: **\NAME{ARGUMENT 1}{ARGUMENT 2}{ARGUMENT 3}** <br /> 
 
 ### Here's a brief example of an input/output execution: <br />
 
