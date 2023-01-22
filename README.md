@@ -20,7 +20,7 @@ A list of values:
 \MACRO{5}
 \MACRO{6}
 \MACRO{7}
-A list of values:
+A list of values:\n
 
 VALUE = 1
 VALUE = 2
