@@ -11,7 +11,7 @@ Macros always start with an unescaped backslash followed by a name string. Macro
 Here's a brief example of an input/output execution: <br />
 
 ### Input	Output
-A list of values: <br />
+**A list of values: <br />
 \def{MACRO}{VALUE = #} <br />
 \MACRO{1} <br />
 \MACRO{2} <br />
@@ -20,7 +20,8 @@ A list of values: <br />
 \MACRO{5} <br />
 \MACRO{6} <br />
 \MACRO{7} <br />
-A list of values: <br />
+
+**A list of values: <br />
 
 VALUE = 1 <br />
 VALUE = 2 <br />
@@ -29,6 +30,7 @@ VALUE = 4 <br />
 VALUE = 5 <br />
 VALUE = 6 <br />
 VALUE = 7 <br />
+
 The \def macro defines a new macro called \MACRO, Future occurrences of \MACRO will be replaced with VALUE = # where the # is replaced with the argument to \MACRO. We will go into more detail on \def in the section below. <br />
 
 #### Some notes about the general macro grammar: <br />
